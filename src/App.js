@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from "./globalStyled";
+import Fetch from "./helpers/Fetch";
+import Navbar from "./Navbar/Navbar";
+import Browse from "./pages/Browse/Browse";
+import Latest from "./pages/Latest/Latest";
+import Login from "./pages/Login/Login";
+import MyList from "./pages/MyList/MyList";
+import WhosWatching from "./pages/WhosWatching/WhosWatching";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<Fetch />
+			<GlobalStyle />
+			<Navbar />
+
+			<Login />
+
+			<WhosWatching />
+
+			<Browse />
+
+			<Latest />
+
+			<MyList />
+		</>
+	);
 }
 
 export default App;

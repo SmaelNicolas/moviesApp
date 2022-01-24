@@ -1,6 +1,4 @@
 const logg = () => {
-	console.log("Hola");
-
 	fetch(
 		//Lista de generos
 		// "https://api.themoviedb.org/3/genre/movie/list?api_key=c9c649f8dc1856154cf88a683b935a6e"

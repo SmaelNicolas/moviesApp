@@ -1,9 +1,22 @@
 import React from "react";
-import logg from "./fetchMovies";
+import { fetchTvGenres } from "./fetchGenres";
+import { fetchMovieGenres } from "./fetchGenres";
+import { fetchLatestMovieWeek } from "./fetchLatest";
+import { fetchLatestTvWeek } from "./fetchLatest";
+// import { fetchLatestMovieDay } from "./fetchLatest";
+// import { fetchLatestTvDay } from "./fetchLatest";
 
 function Fetch() {
-	const mensaje = logg();
-	return <div> {mensaje}</div>;
+	return (
+		<>
+			{fetchMovieGenres()}
+			{fetchTvGenres()}
+			{fetchLatestMovieWeek()}
+			{fetchLatestTvWeek()}
+			{/* {fetchLatestMovieDay()} */}
+			{/* {fetchLatestTvDay()} */}
+		</>
+	);
 }
 
 export default Fetch;

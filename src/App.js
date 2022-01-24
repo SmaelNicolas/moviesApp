@@ -15,24 +15,21 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Navbar />
-			<Fetch />
 			<GlobalStyle />
-
 			{useEffect(() => {
 				setTimeout(() => {
-					setIsLogged(true);
+					// setIsLogged(true);
 				}, 2000);
 			}, [isLogged])}
-
-			<Routes>
-				{isLogged ? (
-					<>
+			{isLogged ? (
+				<>
+					<Fetch />
+					<Routes>
 						<Route
 							exact
 							path='/profiles'
 							element={<WhosWatching />}
 						/>
-
 						<Route exact path='/' element={<Browse />} />
 						<Route
 							exact
@@ -44,19 +41,19 @@ function App() {
 							path='/browse/movies'
 							element={<Browse />}
 						/>
-
 						<Route exact path='/latest' element={<Latest />} />
-
 						<Route
 							exact
 							path='/browse/mylist'
 							element={<MyList />}
 						/>
-					</>
-				) : (
+					</Routes>
+				</>
+			) : (
+				<Routes>
 					<Route exact path='/' element={<Login />} />
-				)}
-			</Routes>
+				</Routes>
+			)}
 		</BrowserRouter>
 	);
 }

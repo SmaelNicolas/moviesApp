@@ -11,8 +11,8 @@ const GlobalStyle = createGlobalStyle`
 
     body{
         width: calc(100vw - (100vw - 100%));
-	    background-color: blue;
 
+        background-color: black;
     }
 `;
 

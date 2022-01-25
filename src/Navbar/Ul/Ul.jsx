@@ -14,8 +14,6 @@ const UlStyled = styled.ul`
 	align-items: center;
 
 	gap: 35px;
-
-	background-color: pink;
 `;
 
 function Uls() {

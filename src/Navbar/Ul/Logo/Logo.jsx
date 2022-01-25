@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-const LogoStyled = styled.div`
+const LogoStyled = styled.img`
 	width: 100px;
 	height: 100%;
-	background-color: lime;
 `;
 
 function Logo() {
-	return <LogoStyled>LOGO</LogoStyled>;
+	return <LogoStyled src='https://i.ibb.co/0hwDvVM/n.jpg' />;
 }
 
 export default Logo;

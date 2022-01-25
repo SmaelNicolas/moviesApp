@@ -1,7 +1,16 @@
 import styled from "styled-components";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebookSquare } from "react-icons/fa";
+import { useContext } from "react";
+import { IsLoggedInContext } from "../../../context/IsLoggedContext";
 
 function LoginContainer() {
+	const [, setIsLogged] = useContext(IsLoggedInContext);
+
+	const clickLogIn = (e) => {
+		e.preventDefault();
+		setIsLogged(true);
+	};
+
 	return (
 		<LoginContainerStyled>
 			<DivContainer>
@@ -12,7 +21,7 @@ function LoginContainer() {
 						placeholder='Email o número de teléfono'
 					/>
 					<Input type='text' placeholder='Contraseña' />
-					<Button>Iniciar sesión</Button>
+					<Button onClick={clickLogIn}>Iniciar sesión</Button>
 				</Form>
 
 				<DivHelps>
@@ -27,7 +36,7 @@ function LoginContainer() {
 					<Links>¿Necesitas ayuda?</Links>
 				</DivHelps>
 				<DivFacebook>
-					{FaFacebook}
+					<FaFacebookSquare />
 					<SpanFacebook>Iniciar sesión con Facebook</SpanFacebook>
 				</DivFacebook>
 				<DivFirstTime>
@@ -89,6 +98,8 @@ const DivFacebook = styled.div`
 	height: 19px;
 	color: #333333;
 	padding: 20px;
+	display: flex;
+	gap: 10px;
 `;
 
 const DivHelps = styled.div`
